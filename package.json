@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preversion": "echo npm preversion",
-    "postversion": "echo npm preversion",
-    "versioning-config-xml": "versioning-config-xml",
+    "preversion": "echo $npm_package_version",
+    "postversion": "echo $npm_package_version",
+    "versioning-config-xml": "echo versioning-config-xml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
