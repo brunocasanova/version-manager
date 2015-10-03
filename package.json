@@ -1,12 +1,12 @@
 {
   "name": "version-manager",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preversion": "echo $npm_package_version",
-    "postversion": "echo $npm_package_version",
-    "versioning-config-xml": "echo versioning-config-xml",
+    "preversion": "npm run versioning-config-xml; git add config.xml; git commit -m \"preversioning to $npm_package_version\"",
+    "postversion": "git push origin master; git push origin --tags",
+    "versioning-config-xml": "sed -i -e \"s/<widget id=\\\"com.findhit.phonegap\\\" version=\\\".*\\\"/<widget id=\\\"com.findhit.phonegap\\\" version=\\\"$npm_package_version\\\"/\" config.xml;",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
